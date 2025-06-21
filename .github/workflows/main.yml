@@ -37,7 +37,6 @@ jobs:
           echo test, and deploy your project.
   
   build-api:
-    needs: build
     runs-on: windows-2022
     steps:
       - run: echo "Hello from build-api job"
@@ -49,6 +48,7 @@ jobs:
       - run: echo "Hello from lint job"
 
   sonarqube:
+    needs: build
     runs-on: windows-2022
     steps:
       - run: echo "Hello from sonarqube job"
