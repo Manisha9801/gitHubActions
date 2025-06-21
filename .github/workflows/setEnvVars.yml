@@ -1,3 +1,5 @@
+name: usingGitHubEnv
+
 on:
   workflow_dispatch: 
 
