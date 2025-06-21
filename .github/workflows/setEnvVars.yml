@@ -15,4 +15,4 @@ jobs:
     - name: Use the value
       id: step_two
       run: |
-        run: echo "$MY_VARIABLE"
+        echo "$MY_VARIABLE"
