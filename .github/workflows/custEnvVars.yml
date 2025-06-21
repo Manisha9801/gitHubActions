@@ -22,3 +22,18 @@ jobs:
           echo "$Greeting $First_Name. Today is $DAY_OF_WEEK"
           echo "testvar $testvar"
           echo "testvar ${{env.testvar}}"
+        env:
+          First_Name: Manisha
+          testvar: value-3
+
+      - name: print-value-of-env-defined-in-job
+        run: |
+         echo "testvar ${{env.testvar}}"
+
+  testjob:
+    name: "Print env value from global vars"
+    runs-on: ubuntu-latest
+    steps:
+      - name: print-value-from-global-env-vars
+        run: |
+         echo "Today it's ${{env.DAY_OF_WEEK}}"
