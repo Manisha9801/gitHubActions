@@ -42,7 +42,7 @@ jobs:
       - run: echo "Hello from build-api job"
 
   lint:
-    needs: build
+    needs: [build,build-api]
     runs-on: windows-2022
     steps:
       - run: echo "Hello from lint job"
