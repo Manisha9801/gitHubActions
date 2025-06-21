@@ -2,7 +2,7 @@ on:
     workflow_dispatch: 
 
 jobs: 
-    CUSTOM_ENV_VAR_Demo:
+    customEnvVar:
         runs-on: windows-latest
         steps:
         -   name: Set the value
