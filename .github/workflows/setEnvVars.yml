@@ -10,9 +10,9 @@ jobs:
     - name: Set the value
       id: step_one
       run: |
-        echo "MY_VARIABLE=HelloWorld" >> $GITHUB_ENV
+            echo "MY_VAR=Manisha" >> $GITHUB_ENV
 
     - name: Use the value
       id: step_two
       run: |
-        echo "$MY_VARIABLE"
+            echo "My variable is: $MY_VAR"
