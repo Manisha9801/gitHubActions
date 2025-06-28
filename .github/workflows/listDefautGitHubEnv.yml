@@ -8,7 +8,9 @@ jobs:
       runs-on: ubuntu-latest
       steps:
           - run: env
-          - run: echpo "$GITHUB_REPOSITORY_OWNER"
+          
+          - name: Print repository owner name
+            run: echo "$GITHUB_REPOSITORY_OWNER"
     
     windows-environment-variables:
       runs-on: windows-latest
