@@ -1,17 +1,15 @@
-name: custom GITHUB_ENV
-on:
-  workflow_dispatch: 
+name: Example Workflow for Environment Files
 
-jobs: 
-  custom_GITHUB_ENV_var_demo:
-    runs-on: windows-latest
+on: workflow_dispatch
+
+jobs:
+  set_and_use_env_vars:
+    runs-on: ubuntu-latest
     steps:
-      - name: Set the value
-        id: step_one
-        run: |
-          echo "action_state=yellow" >> "$GITHUB_ENV"
+      - name: Set environment variable
+        run: echo "MY_ENV_VAR=myValue" >> $GITHUB_ENV
 
-      - name: Use the value
-        id: step_two
+      - name: Use environment variable
         run: |
-         printf '%s\n' "$action_state" # This will output 'yellow'
+          echo "The value of MY_ENV_VAR is $MY_ENV_VAR"
+
