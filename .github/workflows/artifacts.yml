@@ -19,6 +19,7 @@ jobs :
     downloadartifactjob :
         name: Download artifact
         runs-on: windows-latest
+        needs: createartifactjob
         steps:
             - uses: actions/download-artifact@v4
               with:
