@@ -1,0 +1,27 @@
+name : Github artifacts
+
+on : push
+
+jobs : 
+    createartifactjob : 
+        name: Upload artifact
+        runs-on: windows-latest
+        steps:
+            - name : Create file for artifact
+              run : echo "Hi, I am storing this data in this file, so that I can use this in the subsequent jobs within this workflow run. I will upload this file to Github storage and download from there when needed in this workflow run." > file.txt
+
+            - uses: actions/upload-artifact@v2
+              with :
+                name: file
+                path: file.txt
+                retention-days: 10
+
+    downloadartifactjob :
+        name: Download artifact
+        runs-on: windows-latest
+        steps:
+            - uses: actions/download-artifact@v2
+              with:
+                name: file
+            - run: cat file.txt
+
